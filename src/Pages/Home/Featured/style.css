@@ -1,0 +1,6 @@
+.featured {
+   
+    background-image: url('../../../assets/home/featured.jpg'); /* Replace with your actual image path */
+   /* Place the pseudo-element behind the content */
+  }
+  
