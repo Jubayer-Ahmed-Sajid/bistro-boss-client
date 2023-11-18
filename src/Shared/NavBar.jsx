@@ -10,10 +10,10 @@ const NavBar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to='/menu'>Menu</NavLink></li>
         <li><Link to="/orders/salad">Orders</Link></li>
-        <button className="btn btn-ghost">
+        <Link to='/dashboard/cart' className="btn btn-ghost">
             <FaCartPlus></FaCartPlus>
             <div className="badge badge-secondary">+{cart.length}</div>
-        </button>
+        </Link>
         <li><Link to="/login">Login</Link></li>
     </>
     const handleLogOut = () => {
