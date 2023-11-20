@@ -33,8 +33,8 @@ const Login = () => {
     }
     const onSubmit = (data) =>{ 
         signIn(data.email,data.password)
-        .then((result)=>{
-            console.log(result.user)
+        .then(()=>{
+            // console.log(result.user)
             Swal.fire({
                 icon: "success",
                 title: "Well Done",
@@ -47,7 +47,8 @@ const Login = () => {
             console.log(error.message)
         })
 
-        console.log(data)}
+        // console.log(data)
+    }
     return (
         <div className="login hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">

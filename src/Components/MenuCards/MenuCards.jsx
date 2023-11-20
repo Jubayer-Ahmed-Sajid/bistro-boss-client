@@ -1,13 +1,13 @@
 import SectionTitle from '../SectionTitle/SectionTitle';
 import PopularCard from '../PopularCard/PopularCard'
-import useMenu from '../hooks/UseMenu';
+
 import PropTypes from 'prop-types'
 
 import { Link } from 'react-router-dom';
 const MenuCards = ({ data, heading, subHeading, title }) => {
     // const [popular,setPopular] = useState([])
-    const [menu] = useMenu()
-    console.log(menu)
+    // const [menu] = useMenu()
+    // console.log(menu)
 
 
 

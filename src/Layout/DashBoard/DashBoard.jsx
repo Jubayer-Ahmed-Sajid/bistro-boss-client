@@ -1,10 +1,15 @@
 import { FaAd, FaBook, FaCalendar, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../../Components/hooks/useCart";
+import useAdmin from "../../Components/hooks/useAdmin";
 
 const DashBoard = () => {
     const [cart] = useCart()
-    const isAdmin = true;
+    const [data] = useAdmin();
+    console.log(data)
+    const isAdmin =data;
+    console.log('isAdmin', isAdmin)
+
     return (
         <div className="flex">
             <div className="w-60 bg-orange-400 min-h-screen">
@@ -12,7 +17,7 @@ const DashBoard = () => {
                     {
                         isAdmin ? <>
                             <li>
-                                <NavLink to='/dashboard/adminHome'>
+                                <NavLink to='/dashboard'>
                                     <FaHome></FaHome> Admin Home
                                 </NavLink>
                             </li>

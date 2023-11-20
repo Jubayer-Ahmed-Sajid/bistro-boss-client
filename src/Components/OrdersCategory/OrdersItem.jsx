@@ -26,7 +26,7 @@ const OrdersItem = ({ item }) => {
     if(user && user.email) {
         axiosSecure.post('/carts', itemToAdd)
           .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             if (res.data) {
               Swal.fire({
                 position: "top-end",

@@ -12,7 +12,7 @@ const Orders = () => {
 
     const initialIndex = categories.indexOf(category)
     const [tabIndex, setTabIndex] = useState(initialIndex)
-    console.log(category)
+    // console.log(category)
     const [menu] = useMenu()
     const salad = menu.filter(item => item.category === 'salad')
     const drinks = menu.filter(item => item.category === 'drinks')

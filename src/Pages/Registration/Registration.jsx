@@ -18,10 +18,10 @@ const Registration = () => {
     } = useForm()
 
     const onsubmit = (data) => {
-        console.log(data)
+        // console.log(data)
         createUser(data.name, data.email, data.password)
-            .then((result) => {
-                console.log(result)
+            .then(() => {
+                // console.log(result)
                 userUpdateProfile(data.name, data.photo)
                     .then(() => {
                         const userInfo = {
