@@ -1,15 +1,16 @@
-import { AuthContext } from '../Providers/AuthProviders/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types'
-import { useContext } from 'react';
+import useAuth from '../Components/hooks/useAuth';
+import useAdmin from '../Components/hooks/useAdmin';
 
 const AdminRoute = ({children}) => {
-    const {user,loading} = useContext(AuthContext)
-    const [data,isAdminLoading] = useContext
+    const {user,loading} = useAuth()
+    const [data,isLoading] = useAdmin()
     const location = useLocation()
-    if(loading || isAdminLoading){
+    if(loading || isLoading){
         return <h2>loading...</h2>
     }
+  
     if(user && data){
         return children
     }

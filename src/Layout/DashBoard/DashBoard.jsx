@@ -6,9 +6,9 @@ import useAdmin from "../../Components/hooks/useAdmin";
 const DashBoard = () => {
     const [cart] = useCart()
     const [data] = useAdmin();
-    console.log(data)
+    
     const isAdmin =data;
-    console.log('isAdmin', isAdmin)
+    
 
     return (
         <div className="flex">
