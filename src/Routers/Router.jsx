@@ -64,7 +64,7 @@ import UpdateItems from "../Pages/Dashboard/ManageItems/UpdateItems";
         },{
           path:'updateItems/:id',
           element:<UpdateItems></UpdateItems>,
-          loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
+          loader:({params})=>fetch(`https://bistro-boss-server-side-chb6ktge5-jubayer-ahmed-sajid.vercel.app/menu/${params.id}`)
           
         }
       ]
