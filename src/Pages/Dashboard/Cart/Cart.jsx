@@ -17,10 +17,10 @@ const Cart = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
+        }).then(async(result) => {
             if (result.isConfirmed) {
-               axiosSecure.delete(`/carts/${id}`)
-               .then((res)=>{
+              const res = await axiosSecure.delete(`/carts/${id}`)
+              
                 if(res.data.deletedCount){
                     Swal.fire({
                         title: "Deleted!",
@@ -29,7 +29,7 @@ const Cart = () => {
                     });
                     refetch()
                 }
-               })
+              
             }
         });
     }
