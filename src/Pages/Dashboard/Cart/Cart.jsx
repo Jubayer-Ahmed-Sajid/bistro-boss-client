@@ -2,10 +2,11 @@ import { FaTrash } from "react-icons/fa";
 import useCart from "../../../Components/hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Components/hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const axiosSecure = useAxiosSecure()
-    const [cartItems,refetch] = useCart()
+    const [cartItems, refetch] = useCart()
     const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
     const total = totalPrice.toFixed(2)
     const handleDelete = (id) => {
@@ -17,11 +18,11 @@ const Cart = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        }).then(async(result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
-              const res = await axiosSecure.delete(`/carts/${id}`)
-              
-                if(res.data.deletedCount){
+                const res = await axiosSecure.delete(`/carts/${id}`)
+
+                if (res.data.deletedCount) {
                     Swal.fire({
                         title: "Deleted!",
                         text: "Your file has been deleted.",
@@ -29,7 +30,7 @@ const Cart = () => {
                     });
                     refetch()
                 }
-              
+
             }
         });
     }
@@ -39,7 +40,11 @@ const Cart = () => {
             <div className="flex justify-evenly my-8">
                 <h2 className='text-4xl text-center'>Total items: {cartItems.length}</h2>
                 <h2 className="text-4xl text-center">Total Price: ${total}</h2>
+                {cartItems.length ? <><Link to='/dashboard/payment'>
                 <button className="btn btn-primary">Pay</button>
+                </Link>
+               </>: <button disabled className="btn btn-primary">Pay</button>
+               }
             </div>
 
             <div className="overflow-x-auto">

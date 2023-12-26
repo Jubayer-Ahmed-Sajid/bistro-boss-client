@@ -16,6 +16,7 @@ import AdminRoute from "./AdminRoute";
 import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import UpdateItems from "../Pages/Dashboard/ManageItems/UpdateItems";
+import Payment from "../Pages/Dashboard/Payment/Payment";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -49,7 +50,12 @@ import UpdateItems from "../Pages/Dashboard/ManageItems/UpdateItems";
         {
           path:'cart',
           element:<Cart></Cart>
-        },{
+        },
+        {
+          path:'payment',
+          element:<Payment></Payment>
+        }
+        ,{
           path:'users',
           element:<AdminRoute><Users></Users></AdminRoute>
           
@@ -64,7 +70,7 @@ import UpdateItems from "../Pages/Dashboard/ManageItems/UpdateItems";
         },{
           path:'updateItems/:id',
           element:<UpdateItems></UpdateItems>,
-          loader:({params})=>fetch(`https://bistro-boss-server-side-chb6ktge5-jubayer-ahmed-sajid.vercel.app/menu/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
           
         }
       ]
